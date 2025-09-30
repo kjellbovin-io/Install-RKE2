@@ -1,0 +1,33 @@
+# images.txt — verified images for local-path, Argo CD, cert-manager, and Rancher core
+# Notes:
+# - RKE2 core components (Canal CNI, Ingress-NGINX, CoreDNS, metrics-server, etc.) are already bundled in the RKE2 release tarball you downloaded.
+#   You typically do NOT need to list them here for airgap — load the RKE2 images tarball on target hosts.
+# - These images are pinned to stable releases as of 2025‑09‑30.
+# - Add your own private registry prefix later if needed (e.g., myregistry.local/…).
+#
+# Local Path Provisioner
+docker.io/rancher/local-path-provisioner:v0.0.32
+#
+# Argo CD (v3.1.7)
+quay.io/argoproj/argocd:v3.1.7
+quay.io/argoproj/argocd-applicationset:v3.1.7
+quay.io/argoproj/argocd-notifications:v3.1.7
+ghcr.io/dexidp/dex:v2.44.0
+docker.io/library/redis:7.2-alpine
+#
+# cert-manager (v1.18.2)
+quay.io/jetstack/cert-manager-controller:v1.18.2
+quay.io/jetstack/cert-manager-cainjector:v1.18.2
+quay.io/jetstack/cert-manager-webhook:v1.18.2
+#
+# Rancher core
+docker.io/rancher/rancher:v2.12.2
+docker.io/rancher/rancher-webhook:v0.4.15
+docker.io/rancher/fleet:v0.9.15
+docker.io/rancher/fleet-agent:v0.9.15
+docker.io/rancher/gitjob:v0.1.76
+docker.io/rancher/system-upgrade-controller:v0.14.1
+
+# MetalLB (v0.14.8)
+quay.io/metallb/controller:v0.14.8
+quay.io/metallb/speaker:v0.14.8
